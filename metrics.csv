@@ -1,0 +1,5 @@
+,MAE,RMSE,MAPE (%)
+Seasonal Naive,10168.93,11629.91,14.9
+Holt-Winters,23360.04,31628.61,40.24
+SARIMAX + Promo,13650.5,17303.01,22.93
+Gradient Boosting,3847.65,4578.18,5.7
