@@ -94,7 +94,7 @@ def generate(seed: int = SEED) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    out = Path(__file__).resolve().parent / "sales.csv"
+    out = Path(__file__).resolve().parent.parent / "data" / "sales.csv"
     data = generate()
     data.to_csv(out, index=False)
     print(f"Saved {len(data):,} rows to {out}")

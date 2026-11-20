@@ -28,8 +28,9 @@ from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 warnings.filterwarnings("ignore")
 
-ROOT = Path(__file__).resolve().parent
-OUT = ROOT  # all files live in one folder
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "outputs"
+OUT.mkdir(exist_ok=True)
 HOLDOUT_DAYS = 90
 SEASON = 7  # weekly seasonality
 LAG = 364   # same weekday, one year ago (>= horizon, so always known)
@@ -217,5 +218,5 @@ def main(data_path: Path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="E-commerce sales forecasting")
-    parser.add_argument("--data", type=Path, default=ROOT / "sales.csv")
+    parser.add_argument("--data", type=Path, default=ROOT / "data" / "sales.csv")
     main(parser.parse_args().data)
